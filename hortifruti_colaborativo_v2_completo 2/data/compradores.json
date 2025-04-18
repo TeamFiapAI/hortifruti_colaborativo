@@ -1,0 +1,14 @@
+[
+    {
+        "nome": "Paulo",
+        "cpf": "00000000000",
+        "cidade": "Porto Alegre",
+        "contato": "999999999999"
+    },
+    {
+        "nome": "Luiza",
+        "cpf": "55555555555",
+        "cidade": "Belo Horizonte",
+        "contato": "444444444444"
+    }
+]

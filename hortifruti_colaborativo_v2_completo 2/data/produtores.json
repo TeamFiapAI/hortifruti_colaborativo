@@ -1,0 +1,63 @@
+[
+    {
+        "nome": "Felipe",
+        "cpf_cnpj": "09299886691",
+        "cidade": "Rio de Janeiro",
+        "contato": "111111111111",
+        "ofertas": [
+            {
+                "produto": [
+                    "Alface",
+                    "kg"
+                ],
+                "quantidade": 2.0,
+                "preco": 2.5,
+                "data_entrega": "25/04/2025"
+            },
+            {
+                "produto": [
+                    "Feijao",
+                    "kg"
+                ],
+                "quantidade": 3.0,
+                "preco": 3.5,
+                "data_entrega": "25/07/2027"
+            },
+            {
+                "produto": [
+                    "Arroz",
+                    "kg"
+                ],
+                "quantidade": 10.0,
+                "preco": 4.5,
+                "data_entrega": "23/05/2025"
+            }
+        ]
+    },
+    {
+        "nome": "Pedro",
+        "cpf_cnpj": "2222222222",
+        "cidade": "Goiania",
+        "contato": "111111111111111",
+        "ofertas": [
+            {
+                "produto": [
+                    "Mandioca",
+                    "kg"
+                ],
+                "quantidade": 4.0,
+                "preco": 6.0,
+                "data_entrega": "30/04/2025"
+            },
+            {
+                "produto": [
+                    "Queijo",
+                    "kg"
+                ],
+                "quantidade": 5.0,
+                "preco": 5.0,
+                "data_entrega": "21/04/2025"
+            }
+        ]
+    }
+]
