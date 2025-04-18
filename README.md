@@ -38,7 +38,7 @@ hortifruti_colaborativo/ │ ├── main.py # Menu principal do sistema (CLI)
 
 - Python 3.12+
 - CLI (linha de comando)
-- Estruturas de dados: listas, dicionários, JSON
+- Estruturas de dados: listas, dicionários, tuplas, JSON
 - Organização modular por arquivos
 - Validações manuais de CPF, telefone, datas e números
 
