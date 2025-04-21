@@ -33,7 +33,14 @@ Este projeto simula o backend de uma futura Agrotech voltada para agricultura fa
 
 ## 📁 Estrutura do Projeto
 
-hortifruti_colaborativo/ ├── main.py # Menu principal do sistema (CLI) ├── cadastro.py # Cadastro de produtores e suas ofertas ├── compradores.py # Cadastro e filtros de compradores ├── gerenciamento.py # Listagem, edição, exclusão e filtros de produtores e ofertas ├── db.py # Conexão e acesso ao banco de dados Oracle ├── utils.py # Validações de dados (CPF, telefone, datas, etc.) └── config.json # Configurações de conexão com o banco Oracle (não versionado)
+hortifruti_colaborativo/
+├── main.py          # Menu principal do sistema (CLI)
+├── cadastro.py      # Cadastro de produtores e suas ofertas
+├── compradores.py   # Cadastro e filtros de compradores
+├── gerenciamento.py # Listagem, edição, exclusão e filtros de produtores e ofertas
+├── db.py            # Conexão e acesso ao banco de dados Oracle
+├── utils.py         # Validações de dados (CPF, telefone, datas, etc.)
+└── config.json      # Configurações de conexão com o banco Oracle
 
 ---
 
