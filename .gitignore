@@ -33,3 +33,6 @@ build/
 # Diretórios ocultos do sistema
 .DS_Store
 Thumbs.db
+
+# Relatórios gerados em JSON
+relatorios/

@@ -70,11 +70,11 @@ def buscar_ofertas():
     with conectar() as conn:
         with conn.cursor() as cursor:
             cursor.execute("""
-                SELECT o.produto, o.quantidade, o.preco,
+                SELECT o.id, o.produto, o.quantidade, o.preco,
                        TO_CHAR(o.data_entrega, 'DD/MM/YYYY'),
                        p.nome, p.cidade
                 FROM ofertas o
-                INNER JOIN produtores p ON o.produtor_id = p.id
+                JOIN produtores p ON o.produtor_id = p.id
                 ORDER BY o.data_entrega
             """)
             return cursor.fetchall()
@@ -116,7 +116,7 @@ def buscar_compradores_filtrados(cidade=None, nome=None):
     with conectar() as conn:
         with conn.cursor() as cursor:
             query = """
-                SELECT nome, cpf, cidade, contato
+                SELECT id, nome, cpf, cidade, contato
                 FROM compradores
                 WHERE 1=1
             """
@@ -129,4 +129,4 @@ def buscar_compradores_filtrados(cidade=None, nome=None):
                 params.append(f"%{nome}%")
             cursor.execute(query, params)
             return cursor.fetchall()
-
+        

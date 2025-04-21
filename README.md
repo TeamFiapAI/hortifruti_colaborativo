@@ -26,6 +26,12 @@ Este projeto simula o backend de uma futura Agrotech voltada para agricultura fa
 ✅ Visualização de compradores:  
 - Com filtros por nome e cidade  
 
+✅ Exportação de dados para JSON:  
+- Dados de produtores, compradores e ofertas exportados para arquivos `.json` em uma pasta `relatorios/`
+
+✅ Relatório estatístico em JSON:  
+- Arquivo `relatorio_resumo.json` com totais e média de preços gerado automaticamente na pasta `relatorios/`
+
 ✅ Persistência de dados em banco Oracle:  
 - Todas as informações são salvas e consultadas diretamente no banco de dados, sem uso de arquivos locais  
 
@@ -48,7 +54,7 @@ hortifruti_colaborativo/
 
 ## 🛠️ Tecnologias Utilizadas
 
-- Python 3.12+  
+- Python 3.13
 - Interface via linha de comando (CLI)  
 - Módulo `oracledb` para integração com banco de dados Oracle  
 - Programação modular (separação por responsabilidade)  

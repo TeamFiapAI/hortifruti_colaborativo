@@ -1,6 +1,7 @@
 from cadastro import cadastrar_produtor
 from gerenciamento import listar_produtores, editar_produtor, excluir_produtor, listar_ofertas, listar_ofertas_filtradas
 from compradores import cadastrar_comprador, listar_compradores_filtrados
+from exportacao import exportar_dados_para_json, gerar_relatorio_resumo_json
 
 def exibir_menu():
     print("\n=== Sistema Hortifruti Colaborativo ===")
@@ -12,7 +13,10 @@ def exibir_menu():
     print("6. Listar ofertas com filtros")
     print("7. Cadastrar comprador")
     print("8. Listar compradores com filtros")
-    print("9. Sair")
+    print("9. Exportar dados para JSON")
+    print("10. Gerar relatório estatístico (JSON)")
+    print("11. Sair")
+
 
 def main():
     while True:
@@ -36,6 +40,10 @@ def main():
         elif opcao == "8":
             listar_compradores_filtrados()
         elif opcao == "9":
+            exportar_dados_para_json()
+        elif opcao == "10":
+            gerar_relatorio_resumo_json()
+        elif opcao == "11":
             print("Encerrando o programa.")
             break
         else:
