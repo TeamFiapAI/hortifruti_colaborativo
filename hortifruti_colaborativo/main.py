@@ -1,4 +1,3 @@
-
 from cadastro import cadastrar_produtor
 from gerenciamento import listar_produtores, editar_produtor, excluir_produtor, listar_ofertas, listar_ofertas_filtradas
 from compradores import cadastrar_comprador, listar_compradores_filtrados
@@ -43,4 +42,7 @@ def main():
             print("Opção inválida. Tente novamente.")
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(f"\n Ocorreu um erro inesperado: {e}")
