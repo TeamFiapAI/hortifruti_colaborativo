@@ -48,7 +48,7 @@ hortifruti_colaborativo/
 ├── exportacao.py     # Exportação de dados e geração de relatórios em JSON
 ├── db.py             # Conexão e acesso ao banco de dados Oracle
 ├── utils.py          # Validações de dados (CPF, telefone, datas, etc.)
-├── config.json       # Configurações de conexão com o banco Oracle (não versionado)
+├── config.json       # Configurações de conexão com o banco Oracle
 ├── relatorios/       # Pasta onde os arquivos .json são gerados (ignorada pelo Git)
 │   └── (vazio)
 └── ddl/
