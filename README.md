@@ -65,7 +65,7 @@ hortifruti_colaborativo/
 │   ├── utils.py             # Validações de dados (CPF, telefone, datas, etc.)
 │   └── relatorios/          # Pasta onde os arquivos .json são gerados (ignorada pelo Git)
 ├── config/
-│   └── config.json          # Configurações de conexão com o banco Oracle (não versionado)
+│   └── config.json          # Configurações de conexão com o banco Oracle
 ├── scripts/
 │   └── script.sql           # Script de criação das tabelas no Oracle
 └── .gitignore               # Arquivos e pastas ignorados pelo Git
