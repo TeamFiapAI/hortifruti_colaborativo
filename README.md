@@ -8,6 +8,20 @@ Este projeto simula o backend de uma futura Agrotech voltada para agricultura fa
 
 ---
 
+## 👨‍💻 Equipe de desenvolvimento
+
+Este sistema foi desenvolvido por alunos da FIAP como parte do projeto integrador da disciplina de Inteligência Artificial (EAD).
+
+### Integrantes do grupo:
+- Fernando Gomes da Silva - RM561534
+- Guilherme Urbinatti - RM565203
+- Vinicius Burchert Vilas Boas - RM565395
+- Felipe Balthazar de Almeida - RM562434
+
+### Orientação:
+- Tutor(a): Lucas Gomes Moreira
+- Coordenador(a): André Godoi Chiovato
+
 ## 📌 Funcionalidades
 
 ✅ Cadastro de produtores com:  
@@ -41,18 +55,20 @@ Este projeto simula o backend de uma futura Agrotech voltada para agricultura fa
 
 ```
 hortifruti_colaborativo/
-├── main.py           # Menu principal do sistema (CLI)
-├── cadastro.py       # Cadastro de produtores e suas ofertas
-├── compradores.py    # Cadastro e filtros de compradores
-├── gerenciamento.py  # Listagem, edição, exclusão e filtros de produtores e ofertas
-├── exportacao.py     # Exportação de dados e geração de relatórios em JSON
-├── db.py             # Conexão e acesso ao banco de dados Oracle
-├── utils.py          # Validações de dados (CPF, telefone, datas, etc.)
-├── config.json       # Configurações de conexão com o banco Oracle
-├── relatorios/       # Pasta onde os arquivos .json são gerados (ignorada pelo Git)
-│   └── (vazio)
-└── ddl/
-    └── script.sql    # Script de criação das tabelas no Oracle
+├── src/
+│   ├── main.py              # Menu principal do sistema (CLI)
+│   ├── cadastro.py          # Cadastro de produtores e suas ofertas
+│   ├── compradores.py       # Cadastro e filtros de compradores
+│   ├── gerenciamento.py     # Listagem, edição, exclusão e filtros de produtores e ofertas
+│   ├── exportacao.py        # Exportação de dados e geração de relatórios em JSON
+│   ├── db.py                # Conexão e acesso ao banco de dados Oracle
+│   ├── utils.py             # Validações de dados (CPF, telefone, datas, etc.)
+│   └── relatorios/          # Pasta onde os arquivos .json são gerados (ignorada pelo Git)
+├── config/
+│   └── config.json          # Configurações de conexão com o banco Oracle (não versionado)
+├── scripts/
+│   └── script.sql           # Script de criação das tabelas no Oracle
+└── .gitignore               # Arquivos e pastas ignorados pelo Git
 ```
 
 ---

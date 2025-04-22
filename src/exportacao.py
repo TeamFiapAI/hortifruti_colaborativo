@@ -7,9 +7,9 @@ def exportar_dados_para_json():
     compradores = buscar_compradores_filtrados()
     ofertas = buscar_ofertas()
 
-    os.makedirs("relatorios", exist_ok=True)
+    os.makedirs("src/relatorios", exist_ok=True)
 
-    with open("relatorios/export_produtores.json", "w", encoding="utf-8") as f:
+    with open("src/relatorios/export_produtores.json", "w", encoding="utf-8") as f:
         json.dump(produtores, f, ensure_ascii=False, indent=4)
 
     compradores_formatados = [
@@ -22,7 +22,7 @@ def exportar_dados_para_json():
         }
         for c in compradores
     ]
-    with open("relatorios/export_compradores.json", "w", encoding="utf-8") as f:
+    with open("src/relatorios/export_compradores.json", "w", encoding="utf-8") as f:
         json.dump(compradores_formatados, f, ensure_ascii=False, indent=4)
 
     ofertas_formatadas = [
@@ -37,7 +37,7 @@ def exportar_dados_para_json():
         }
         for o in ofertas
     ]
-    with open("relatorios/export_ofertas.json", "w", encoding="utf-8") as f:
+    with open("src/relatorios/export_ofertas.json", "w", encoding="utf-8") as f:
         json.dump(ofertas_formatadas, f, ensure_ascii=False, indent=4)
 
     print("Dados exportados com sucesso para a pasta 'relatorios/'.")
@@ -63,9 +63,9 @@ def gerar_relatorio_resumo_json():
         "media_preco_ofertas": round(media_preco, 2)
     }
 
-    os.makedirs("relatorios", exist_ok=True)
+    os.makedirs("src/relatorios", exist_ok=True)
 
-    with open("relatorios/relatorio_resumo.json", "w", encoding="utf-8") as f:
+    with open("src/relatorios/relatorio_resumo.json", "w", encoding="utf-8") as f:
         json.dump(relatorio, f, ensure_ascii=False, indent=4)
 
     print("📄 Relatório estatístico salvo como relatorios/relatorio_resumo.json.")

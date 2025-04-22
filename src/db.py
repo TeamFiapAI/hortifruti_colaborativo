@@ -2,7 +2,12 @@ import oracledb
 import json
 import os
 
-with open("config.json", "r", encoding="utf-8") as f:
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+CONFIG_PATH = os.path.join(BASE_DIR, "config", "config.json")
+CAMINHO_SCRIPT = os.path.join(BASE_DIR, "scripts", "script.sql")
+
+# Carrega a configuração
+with open(CONFIG_PATH, "r", encoding="utf-8") as f:
     config = json.load(f)
 
 ORACLE_USER = config["ORACLE_USER"]
@@ -132,15 +137,13 @@ def buscar_compradores_filtrados(cidade=None, nome=None):
             return cursor.fetchall()
         
 def executar_ddl():
-    caminho_script = os.path.join("ddl", "script.sql")
-
     print("\n=== Sistema Hortifruti Colaborativo - Verificando base de dados ===")
 
-    if not os.path.exists(caminho_script):
-        print("Script de criação de tabelas não encontrado.")
+    if not os.path.exists(CAMINHO_SCRIPT):
+        print(f"Script de criação de tabelas não encontrado em '{CAMINHO_SCRIPT}'.")
         return
 
-    with open(caminho_script, "r", encoding="utf-8") as f:
+    with open(CAMINHO_SCRIPT, "r", encoding="utf-8") as f:
         ddl = f.read()
 
     comandos = [cmd.strip() for cmd in ddl.split(";") if cmd.strip()]
@@ -156,10 +159,10 @@ def executar_ddl():
                         print("Objeto já existe. Ignorando criação.")
                         continue
                     elif "ORA-02275" in msg:
-                        print("FK já existe. Ignorando.")
+                        print("FK já existente. Ignorando.")
                         continue
                     else:
-                        print(f"Erro ao executar comando:\n{comando}\n→ {msg}")
+                        print(f"\nErro ao executar comando:\n{comando}\n→ {msg}")
                         raise
         conn.commit()
-        print("Script DDL executado (ou ignorado onde já existia).")
+        print("Script DDL executado (ou comandos ignorados onde já existiam).")
