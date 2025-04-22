@@ -23,5 +23,5 @@ def listar_compradores_filtrados():
         return
 
     print("\n=== Compradores Cadastrados ===")
-    for nome, cpf, cidade, contato in compradores:
+    for _, nome, cpf, cidade, contato in compradores:
         print(f"- {nome} | CPF: {cpf} | {cidade} | Contato: {contato}")

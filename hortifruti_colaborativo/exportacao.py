@@ -54,7 +54,7 @@ def gerar_relatorio_resumo_json():
 
     media_preco = 0
     if total_ofertas > 0:
-        media_preco = sum(oferta[2] for oferta in ofertas) / total_ofertas
+        media_preco = sum(float(oferta[4]) for oferta in ofertas) / total_ofertas
 
     relatorio = {
         "total_produtores": total_produtores,
@@ -68,4 +68,5 @@ def gerar_relatorio_resumo_json():
     with open("relatorios/relatorio_resumo.json", "w", encoding="utf-8") as f:
         json.dump(relatorio, f, ensure_ascii=False, indent=4)
 
-    print("Relatório estatístico salvo como relatorios/relatorio_resumo.json.")
+    print("📄 Relatório estatístico salvo como relatorios/relatorio_resumo.json.")
+

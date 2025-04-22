@@ -78,8 +78,8 @@ def listar_ofertas():
         return
 
     print("\n=== Ofertas Cadastradas ===")
-    for produto, quantidade, preco, data_entrega, nome_produtor, cidade in ofertas:
-        print(f"- {produto} | {quantidade} kg | R$ {preco:.2f}/kg | Entrega: {data_entrega} | Produtor: {nome_produtor} ({cidade})")
+    for oferta_id, produtor_id, produto, quantidade, preco, data, nome, cidade in ofertas:
+        print(f"- {produto} | {quantidade} kg | R$ {preco:.2f}/kg | Entrega: {data} | Produtor: {nome} ({cidade})")
 
 
 def listar_ofertas_filtradas():

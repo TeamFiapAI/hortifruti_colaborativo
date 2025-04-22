@@ -2,6 +2,8 @@ from cadastro import cadastrar_produtor
 from gerenciamento import listar_produtores, editar_produtor, excluir_produtor, listar_ofertas, listar_ofertas_filtradas
 from compradores import cadastrar_comprador, listar_compradores_filtrados
 from exportacao import exportar_dados_para_json, gerar_relatorio_resumo_json
+from db import executar_ddl
+
 
 def exibir_menu():
     print("\n=== Sistema Hortifruti Colaborativo ===")
@@ -51,6 +53,7 @@ def main():
 
 if __name__ == "__main__":
     try:
+        executar_ddl()
         main()
     except Exception as e:
         print(f"\n Ocorreu um erro inesperado: {e}")

@@ -1,5 +1,6 @@
 import oracledb
 import json
+import os
 
 with open("config.json", "r", encoding="utf-8") as f:
     config = json.load(f)
@@ -70,9 +71,9 @@ def buscar_ofertas():
     with conectar() as conn:
         with conn.cursor() as cursor:
             cursor.execute("""
-                SELECT o.id, o.produto, o.quantidade, o.preco,
-                       TO_CHAR(o.data_entrega, 'DD/MM/YYYY'),
-                       p.nome, p.cidade
+                SELECT o.id, o.produtor_id, o.produto, o.quantidade, o.preco,
+                TO_CHAR(o.data_entrega, 'DD/MM/YYYY'),
+                p.nome, p.cidade
                 FROM ofertas o
                 JOIN produtores p ON o.produtor_id = p.id
                 ORDER BY o.data_entrega
@@ -130,3 +131,35 @@ def buscar_compradores_filtrados(cidade=None, nome=None):
             cursor.execute(query, params)
             return cursor.fetchall()
         
+def executar_ddl():
+    caminho_script = os.path.join("ddl", "script.sql")
+
+    print("\n=== Sistema Hortifruti Colaborativo - Verificando base de dados ===")
+
+    if not os.path.exists(caminho_script):
+        print("Script de criação de tabelas não encontrado.")
+        return
+
+    with open(caminho_script, "r", encoding="utf-8") as f:
+        ddl = f.read()
+
+    comandos = [cmd.strip() for cmd in ddl.split(";") if cmd.strip()]
+
+    with conectar() as conn:
+        with conn.cursor() as cursor:
+            for comando in comandos:
+                try:
+                    cursor.execute(comando)
+                except oracledb.DatabaseError as e:
+                    msg = str(e)
+                    if "ORA-00955" in msg:
+                        print("Objeto já existe. Ignorando criação.")
+                        continue
+                    elif "ORA-02275" in msg:
+                        print("FK já existe. Ignorando.")
+                        continue
+                    else:
+                        print(f"Erro ao executar comando:\n{comando}\n→ {msg}")
+                        raise
+        conn.commit()
+        print("Script DDL executado (ou ignorado onde já existia).")
